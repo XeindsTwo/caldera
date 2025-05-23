@@ -23,6 +23,7 @@
   }
   @include r($sm) {
     padding-inline: 18px;
+    margin-bottom: 20px;
   }
 
   &__img {
