@@ -12,13 +12,19 @@
   transition: color .4s, background-color .4s, border .4s;
 
   &:hover {
-    background-color: rgba($accent, .75);
+    background-color: rgba($accent, .8);
   }
 
   &:focus {
-    background-color: transparent;
-    color: $black;
-    border-color: $accent;
+    background-color: $black;
+    color: $white;
+    border-color: transparent;
+  }
+
+  &:active {
+    background-color: $accent100;
+    border-color: transparent;
+    color: $white;
   }
 
   &:disabled {
