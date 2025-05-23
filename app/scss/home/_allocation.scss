@@ -1,0 +1,60 @@
+.allocation {
+  @include flex-column(0);
+  display: none;
+  align-items: center;
+  padding: 34px 0;
+  max-width: 550px;
+  border-radius: 48px;
+  background-color: $white;
+
+  &__info {
+    margin-top: 34px;
+    background-color: $accent;
+    padding: 50px 30px;
+    border-radius: 24px;
+    width: 100%;
+    text-align: center;
+    color: $white;
+    margin-bottom: 35px;
+  }
+
+  &__slogan {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-size: 34px;
+    font-family: $ppNeue;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  &__currency {
+    @include flex-align-center(13);
+    justify-content: center;
+    font-family: $ppNeue;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+
+  &__digital {
+    font-size: 70px;
+  }
+
+  &__value {
+    margin-left: -4px;
+    font-size: 52px;
+  }
+
+  &__address {
+    span {
+      color: rgba($white, .6);
+    }
+  }
+
+  &__text {
+    padding: 0 30px;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 50px;
+  }
+}

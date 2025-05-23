@@ -1,0 +1,23 @@
+.btn {
+  @include flex-align-center(10);
+  justify-content: center;
+  padding: 16px 30px;
+  background-color: $accent;
+  color: $white;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 35px;
+  max-width: max-content;
+  border: 1px solid transparent;
+  transition: color .4s, background-color .4s, border .4s;
+
+  &:hover {
+    background-color: rgba($accent, .75);
+  }
+
+  &:focus {
+    background-color: transparent;
+    color: $black;
+    border-color: $accent;
+  }
+}

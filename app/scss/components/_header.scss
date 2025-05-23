@@ -1,0 +1,34 @@
+.header {
+  padding-top: 34px;
+  margin-bottom: 30px;
+  padding-inline: 140px;
+
+  &__inner {
+    @include flex-between-center-gap(30);
+  }
+
+  &__list {
+    @include flex-align-center(20);
+  }
+
+  &__link {
+    width: 35px;
+    height: 35px;
+    padding: 1px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    @include flex-center;
+    transition: border .4s;
+
+    &:hover {
+      svg path {
+        fill: $accent;
+        fill-opacity: 1;
+      }
+    }
+
+    &:focus {
+      border-color: $accent;
+    }
+  }
+}

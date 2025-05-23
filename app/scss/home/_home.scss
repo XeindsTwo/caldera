@@ -1,0 +1,77 @@
+.home {
+  padding-inline: 140px;
+
+  &__inner {
+    display: flex;
+    height: calc(100vh - 130px);
+    gap: 18px;
+  }
+
+  &__content {
+    flex: 560 1 45%;
+    min-width: 0;
+    @include flex-column(0);
+    max-width: 40%;
+    width: 100%;
+    padding: 34px 40px;
+    border-radius: 48px;
+    background-color: $white;
+  }
+
+  &__slogan {
+    max-width: max-content;
+    margin-bottom: 25px;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 18px;
+    border: 1px solid rgba($black, .26);
+  }
+
+  &__title {
+    font-size: 70px;
+    font-family: $ppNeue;
+    font-weight: 700;
+    line-height: 95%;
+    margin-bottom: 25px;
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    max-width: 365px;
+  }
+
+  &__btn {
+    margin-top: auto;
+  }
+
+  &__img {
+    flex: 715 1 55%;
+    border-radius: 56px;
+    @include objectCoverBg;
+  }
+
+  &__steps {
+    @include flex-align-center(0);
+  }
+
+  &__step {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 23px;
+    border-radius: 45px;
+    border: 1px solid rgba($black, .26);
+    transition: background-color .4s, border .4s;
+
+    &.active {
+      background-color: $accent;
+      color: $white;
+      border-color: transparent;
+    }
+  }
+
+  &__line {
+    width: 15px;
+    height: 2px;
+    background-color: rgba($black, .26);
+  }
+}

@@ -1,0 +1,45 @@
+@include('components/_head.html')
+
+<body class="body">
+@include('components/_header.html')
+<main>
+  <section class="home">
+    <div class="home__inner">
+      <div class="home__content">
+        <span class="home__slogan">caldera retroactives</span>
+        <h1 class="home__title">Check Your Eligibility</h1>
+        <p class="home__text">
+          Check if your address is eligible for the $ERA airdrop based on past activity like
+          using Caldera rollups, joining campaigns, or registering a .era domain.
+        </p>
+        <button class="home__btn btn" type="button">Check Eligibility</button>
+      </div>
+      <img class="home__img" src="images/home.png" alt="">
+    </div>
+  </section>
+  <div class="allocation" id="allocationFinal">
+    <div class="home__steps">
+      <div class="home__step">01 / eligibility</div>
+      <span class="home__line"></span>
+      <div class="home__step active">02 / claiming</div>
+    </div>
+    <div class="allocation__info">
+      <span class="allocation__slogan">Allocation:</span>
+      <p class="allocation__currency">
+        <span class="allocation__digital" id="allocationDigital">1200</span>
+        <img src="images/era.svg" width="50" height="50" alt="era icon">
+        <span class="allocation__value">ERA</span>
+      </p>
+      <p class="allocation__address">
+        <span>Address:</span> 0xAbC...12345
+      </p>
+    </div>
+    <p class="allocation__text">
+      If the address you entered is yours, you may claim your $ERA allocation now —
+      tokens can be used for paying fees, governance, staking, and more.
+    </p>
+    <button class="btn interact-button" type="button">Claim Tokens</button>
+  </div>
+</main>
+<script src="js/main.min.js" type="module"></script>
+</body>
