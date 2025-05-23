@@ -3,12 +3,17 @@
   margin-bottom: 30px;
   padding-inline: 140px;
 
+  &__img {
+    animation: fadeInLeft 0.7s ease-out both;
+  }
+
   &__inner {
     @include flex-between-center-gap(30);
   }
 
   &__list {
     @include flex-align-center(20);
+    animation: fadeInRight 0.7s ease-out both;
   }
 
   &__link {

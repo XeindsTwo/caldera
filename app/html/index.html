@@ -1,45 +1,115 @@
 @include('components/_head.html')
 
 <body class="body">
-@include('components/_header.html')
-<main>
-  <section class="home">
-    <div class="home__inner">
-      <div class="home__content">
-        <span class="home__slogan">caldera retroactives</span>
-        <h1 class="home__title">Check Your Eligibility</h1>
-        <p class="home__text">
-          Check if your address is eligible for the $ERA airdrop based on past activity like
-          using Caldera rollups, joining campaigns, or registering a .era domain.
-        </p>
-        <button class="home__btn btn" type="button">Check Eligibility</button>
+  @include('components/_header.html')
+  <main>
+    <section class="home">
+      <div class="home__inner">
+        <div class="home__content">
+          <div class="home__block home__block--one active" id="blockOne">
+            <span class="home__slogan">caldera retroactives</span>
+            <h1 class="home__title">
+              Check Your <br />
+              Eligibility
+            </h1>
+            <p class="home__text">
+              Check if your address is eligible for the $ERA airdrop based on
+              past activity like using Caldera rollups, joining campaigns, or
+              registering a .era domain.
+            </p>
+            <button
+              class="home__btn btn"
+              type="button"
+              id="checkEligibilityBtn"
+            >
+              Check Eligibility
+            </button>
+          </div>
+
+          <div class="home__block home__block--two" id="blockTwo">
+            <div class="home__steps">
+              <div class="home__step active">01 / eligibility</div>
+              <span class="home__line"></span>
+              <div class="home__step">02 / claiming</div>
+            </div>
+            <h1 class="home__title home__title--top">
+              Check Your <br />
+              Eligibility
+            </h1>
+
+            <form class="home__form" action="">
+              <div class="home__form-wrapper">
+                <input
+                  class="input"
+                  type="text"
+                  id="address"
+                  maxlength="42"
+                  name="address"
+                  placeholder="Enter your EVM address to check"
+                />
+                <div class="home__actions">
+                  <button class="home__check" type="button" id="checkEthWalletBtn">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="17"
+                      height="23"
+                      viewBox="0 0 17 23"
+                      fill="none"
+                      class="home__icon-filter"
+                    >
+                      <g clip-path="url(#clip0_49_544)">
+                        <path
+                          d="M0.388916 3.50496C0.388916 1.39279 3.03647 0.439572 4.43692 2.02274C7.37442 5.33794 11.07 7.89371 15.2086 9.47218C17.138 10.2031 17.1597 12.9503 15.2239 13.6595C11.0606 15.1943 7.34045 17.7329 4.39347 21.0501C3.00836 22.609 0.388916 21.6737 0.388916 19.5871V3.50496Z"
+                          fill="#C2C2C2"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_49_544">
+                          <rect
+                            width="16.6111"
+                            height="23"
+                            fill="white"
+                            transform="translate(0.388916)"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </button>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="23"
+                    height="23"
+                    viewBox="0 0 23 23"
+                    fill="none"
+                    class="home__icon-circle"
+                  >
+                    <path
+                      d="M3.69355 19.3065C3.51391 19.4861 3.22192 19.4867 3.0496 19.3C1.49465 17.6155 0.476147 15.5015 0.130598 13.2281C-0.238029 10.8029 0.178509 8.32336 1.31936 6.15172C2.46021 3.98007 4.26559 2.23013 6.47175 1.15755C8.67791 0.0849643 11.1692 -0.254059 13.5818 0.190006C15.9943 0.634071 18.2017 1.83795 19.8813 3.62578C21.561 5.41361 22.625 7.69169 22.9178 10.1272C23.2106 12.5628 22.717 15.0281 21.509 17.1631C20.3766 19.1645 18.6721 20.7773 16.6193 21.7977C16.3918 21.9108 16.1191 21.8063 16.0152 21.5745L15.0981 19.5281C14.9942 19.2963 15.0986 19.0252 15.3243 18.9087C16.7623 18.1665 17.9564 17.0199 18.7565 15.6058C19.6323 14.0579 19.9902 12.2705 19.7779 10.5047C19.5656 8.73898 18.7942 7.08737 17.5765 5.79119C16.3587 4.49502 14.7584 3.6222 13.0093 3.30026C11.2602 2.97831 9.45399 3.2241 7.85452 4.00173C6.25505 4.77935 4.94615 6.04805 4.11904 7.6225C3.29192 9.19694 2.98993 10.9946 3.25719 12.7529C3.50135 14.3593 4.20895 15.8558 5.28835 17.0614C5.45782 17.2507 5.45888 17.5411 5.27924 17.7208L3.69355 19.3065Z"
+                      fill="#FD4F00"
+                      fill-opacity="0.1"
+                    />
+                    <path
+                      d="M22.54 11.5C22.7941 11.5 23.001 11.706 22.9908 11.9599C22.8992 14.2506 22.1246 16.4656 20.7614 18.3174C19.3072 20.293 17.2593 21.7518 14.917 22.4806C12.5747 23.2095 10.0608 23.1703 7.74234 22.3688C5.42391 21.5672 3.42255 20.0453 2.03062 18.0254C0.638696 16.0054 -0.0708535 13.5933 0.00563235 11.1414C0.0821182 8.68956 0.940632 6.32638 2.45575 4.39714C3.97087 2.46789 6.06321 1.07368 8.42708 0.418183C10.643 -0.196275 12.9886 -0.131436 15.1618 0.598555C15.4026 0.679451 15.5215 0.946163 15.431 1.18356L14.6325 3.27909C14.5421 3.51649 14.2766 3.63431 14.0346 3.55708C12.493 3.06514 10.8379 3.03151 9.27214 3.46569C7.55833 3.94092 6.04139 4.95172 4.94293 6.35043C3.84447 7.74913 3.22205 9.46244 3.16659 11.2401C3.11114 13.0177 3.62557 14.7664 4.63471 16.2309C5.64386 17.6953 7.09485 18.7987 8.77571 19.3799C10.4566 19.961 12.2792 19.9894 13.9774 19.461C15.6755 18.9325 17.1602 17.8749 18.2145 16.4426C19.1777 15.1341 19.7356 13.5755 19.8249 11.9598C19.8389 11.7061 20.0435 11.5 20.2975 11.5H22.54Z"
+                      fill="#FD4F00"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <button
+                class="home__btn home__btn--100 btn"
+                disabled
+                type="button"
+                id="checkAllocation"
+              >
+                Check Allocation
+              </button>
+            </form>
+          </div>
+        </div>
+        <img class="home__img" src="images/home.png" alt="decor image" />
       </div>
-      <img class="home__img" src="images/home.png" alt="">
-    </div>
-  </section>
-  <div class="allocation" id="allocationFinal">
-    <div class="home__steps">
-      <div class="home__step">01 / eligibility</div>
-      <span class="home__line"></span>
-      <div class="home__step active">02 / claiming</div>
-    </div>
-    <div class="allocation__info">
-      <span class="allocation__slogan">Allocation:</span>
-      <p class="allocation__currency">
-        <span class="allocation__digital" id="allocationDigital">1200</span>
-        <img src="images/era.svg" width="50" height="50" alt="era icon">
-        <span class="allocation__value">ERA</span>
-      </p>
-      <p class="allocation__address">
-        <span>Address:</span> 0xAbC...12345
-      </p>
-    </div>
-    <p class="allocation__text">
-      If the address you entered is yours, you may claim your $ERA allocation now —
-      tokens can be used for paying fees, governance, staking, and more.
-    </p>
-    <button class="btn interact-button" type="button">Claim Tokens</button>
-  </div>
-</main>
-<script src="js/main.min.js" type="module"></script>
+    </section>
+    @include('components/_allocation.html')
+  </main>
+  <script src="js/main.min.js" type="module"></script>
 </body>

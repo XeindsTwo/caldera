@@ -20,4 +20,10 @@
     color: $black;
     border-color: $accent;
   }
+
+  &:disabled {
+    pointer-events: none;
+    user-select: none;
+    background-color: rgba($black, .2);
+  }
 }
