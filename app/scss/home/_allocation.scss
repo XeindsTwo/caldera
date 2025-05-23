@@ -34,6 +34,10 @@
     margin: 0 24px 20px;
     max-width: 100%;
   }
+  @media (max-width: 530px) {
+    min-height: 510px;
+    height: auto;
+  }
   @include r($sm) {
     margin: 0 18px 20px;
   }
@@ -166,6 +170,7 @@
     }
     @include r($phone) {
       padding: 0 30px;
+      margin-bottom: 28px;
     }
   }
 
