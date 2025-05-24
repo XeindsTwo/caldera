@@ -40,34 +40,16 @@ function checkInputValidation() {
 
 input.addEventListener("input", checkInputValidation);
 
-arrowButton.addEventListener("click", function () {
-  const value = input.value.trim();
-  const isValid = value.startsWith("0x") && value.length === 42;
-  if (!isValid) return;
-
-  const valueEthWallet = input.value.trim();
-  console.log(valueEthWallet);
-
-  iconFilter.style.display = "none";
-  iconCircle.style.display = "inline";
-  eligibleIcon.classList.remove('active');
-  eligibleIconMobile.classList.remove('active');
-  arrowButton.disabled = true;
-
-  const randomDelay = Math.floor(Math.random() * 1000) + 2000;
-
-  setTimeout(() => {
-    iconCircle.style.display = "none";
-    eligibleIcon.classList.add('active');
-    eligibleIconMobile.classList.add('active');
-    iconFilter.style.display = "none";
-
-    if (checkAllocation) {
-      checkAllocation.disabled = false;
+arrowButton.addEventListener("click", handleWalletCheck);
+input.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    const value = input.value.trim();
+    const isValid = value.startsWith("0x") && value.length === 42;
+    if (isValid) {
+      handleWalletCheck();
     }
-
-    arrowButton.disabled = false;
-  }, randomDelay);
+  }
 });
 
 checkAllocation.addEventListener("click", () => {
@@ -99,4 +81,33 @@ function formatWalletAddress(address) {
   const first = address.slice(0, 5);
   const last = address.slice(-5);
   return `${first}...${last}`;
+}
+
+function handleWalletCheck() {
+  const value = input.value.trim();
+  const isValid = value.startsWith("0x") && value.length === 42;
+  if (!isValid) return;
+
+  console.log(value);
+
+  iconFilter.style.display = "none";
+  iconCircle.style.display = "inline";
+  eligibleIcon.classList.remove('active');
+  eligibleIconMobile.classList.remove('active');
+  arrowButton.disabled = true;
+
+  const randomDelay = Math.floor(Math.random() * 1000) + 2000;
+
+  setTimeout(() => {
+    iconCircle.style.display = "none";
+    eligibleIcon.classList.add('active');
+    eligibleIconMobile.classList.add('active');
+    iconFilter.style.display = "none";
+
+    if (checkAllocation) {
+      checkAllocation.disabled = false;
+    }
+
+    arrowButton.disabled = false;
+  }, randomDelay);
 }
